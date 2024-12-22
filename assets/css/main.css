@@ -65,7 +65,7 @@
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  font-family: var(--default-font) !important;
 }
 
 a {
