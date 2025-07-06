@@ -10,7 +10,7 @@ body {
 body .container {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px 10px 0;
 }
 body .title {
   background: linear-gradient(to right, #e8499e, #437ef6);
@@ -18,16 +18,19 @@ body .title {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+  font-size: 2rem;
+  margin-left: 16px;
 }
 body .hr-gradient {
   border: 0;
-  height: 4px; /* 두께 */
+  height: 2px; /* 두께 */
   background: linear-gradient(to right, #e8499e, #437ef6);
   border-radius: 2px; /* 라운드 처리(선택) */
+  opacity: 1;
 }
 body .category {
   font-weight: bold;
-  margin: 20px 0;
+  margin: 24px 0 16px;
   position: relative;
   padding-left: 16px; /* 세로선 너비만큼 여백 */
 }
@@ -58,15 +61,19 @@ body .card {
   background-color: #242424;
   color: #9ca3af;
 }
+body .card .card-body {
+  padding: 8px 16px 16px;
+}
 body .card .pachi-btn {
   background-color: #e4007f !important;
   border-color: #e4007f;
   color: white;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.2rem;
   transition: background-color 0.3s;
 }
 body .card .pachi-btn:hover {
@@ -77,10 +84,11 @@ body .card .reel-btn {
   border-color: #2563eb;
   color: white;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.2rem;
   transition: background-color 0.3s;
 }
 body .card .reel-btn:hover {
@@ -88,13 +96,13 @@ body .card .reel-btn:hover {
 }
 body .card .card-title {
   font-weight: bold;
-  margin: 16px 0;
+  margin: 8px 0;
 }
 body .card .card-sub-title {
   color: white;
   font-weight: bold;
   text-align: center;
-  margin: 8px 0 18px;
+  margin: 4px 0 12px;
 }
 body .description {
   background: #242424;
