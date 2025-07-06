@@ -1,4 +1,19 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-bolder.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
 body {
+  font-family: 'Pretendard-Regular';
   background-color: black;
   color: #9ca3af;
   background-image: url('/public/images/bg.jpg');
@@ -17,9 +32,10 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    font-weight: 900;
     font-size: 2rem;
     margin-left: 16px;
+    margin-top: 8px;
   }
 
   .hr-gradient {
@@ -74,7 +90,7 @@ body {
     .pachi-btn {
       background-color: #e4007f !important;
       border-color: #e4007f;
-      color: white;
+      color: whitesmoke;
       border-radius: 5px;
       padding: 8px 16px;
       text-align: center;
@@ -90,7 +106,7 @@ body {
     .reel-btn {
       background-color: #2563eb !important;
       border-color: #2563eb;
-      color: white;
+      color: whitesmoke;
       border-radius: 5px;
       padding: 8px 16px;
       text-align: center;
