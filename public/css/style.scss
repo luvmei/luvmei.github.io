@@ -1,15 +1,9 @@
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-bolder.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
+  font-display: swap;
+  src: url('../font/PretendardVariable.woff2') format('woff2-variations');
 }
 
 body {
@@ -143,6 +137,39 @@ body {
       margin: 10px 0 20px;
       color: #ff5722;
       font-weight: bold;
+    }
+  }
+}
+
+// 모바일
+@media (max-width: 768px) {
+  body {
+    .container {
+      padding: 10px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      margin-left: 8px;
+      margin-top: 14px;
+    }
+
+    .card {
+      padding: 15px;
+      margin: 8px;
+      .card-body {
+        padding: 8px 12px;
+      }
+
+      .pachi-btn,
+      .reel-btn {
+        font-size: 1rem;
+        padding: 6px 12px;
+      }
+    }
+
+    .description {
+      margin: 8px;
     }
   }
 }
