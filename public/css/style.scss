@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('../font/PretendardVariable.woff2') format('woff2-variations');
+}
+
+body {
+  font-family: 'Pretendard-Regular';
+  background-color: black;
+  color: #9ca3af;
+  background-image: url('/public/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 10px 0;
+  }
+
+  .title {
+    background: linear-gradient(to right, #e8499e, #437ef6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-left: 16px;
+    margin-top: 8px;
+  }
+
+  .hr-gradient {
+    border: 0;
+    height: 2px; /* 두께 */
+    background: linear-gradient(to right, #e8499e, #437ef6);
+    border-radius: 2px; /* 라운드 처리(선택) */
+    opacity: 1;
+  }
+
+  .category {
+    font-weight: bold;
+    margin: 24px 0 16px;
+    position: relative;
+    padding-left: 16px; /* 세로선 너비만큼 여백 */
+  }
+
+  .category::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: 80%;
+    border-radius: 3px;
+    transform: translateY(-50%);
+  }
+
+  .category-pachi {
+    color: #e4007f;
+  }
+  .category-pachi::before {
+    background: #e4007f;
+  }
+
+  .category-reel {
+    color: #2563eb;
+  }
+  .category-reel::before {
+    background: #2563eb;
+  }
+
+  .card {
+    border: none;
+    background-color: #242424;
+    color: #9ca3af;
+
+    .card-body {
+      padding: 8px 16px 16px;
+    }
+
+    .pachi-btn {
+      background-color: #e4007f !important;
+      border-color: #e4007f;
+      color: whitesmoke;
+      border-radius: 5px;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #d1006b;
+      }
+    }
+    .reel-btn {
+      background-color: #2563eb !important;
+      border-color: #2563eb;
+      color: whitesmoke;
+      border-radius: 5px;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #1a5bbf;
+      }
+    }
+
+    .card-title {
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .card-sub-title {
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      margin: 4px 0 12px;
+    }
+  }
+
+  .description {
+    background: #242424;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 15px;
+
+    .description-title {
+      margin: 10px 0 20px;
+      color: #ff5722;
+      font-weight: bold;
+    }
+  }
+}
+
+// 모바일
+@media (max-width: 768px) {
+  body {
+    background-image: url('/public/images/bg_m.jpg');
+    background-size: 100%;
+    background-position: top;
+
+    .container {
+      padding: 10px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      margin-left: 8px;
+      margin-top: 14px;
+    }
+
+    .sub-game{
+      padding: 0 48px;
+    }
+
+    .category-pachi, 
+    .category-reel {
+      margin: 8px;
+    }
+
+    .card {
+      padding: 15px;
+      margin: 8px;
+      .card-body {
+        padding: 8px 12px;
+      }
+
+      .pachi-btn,
+      .reel-btn {
+        font-size: 1rem;
+        padding: 6px 12px;
+      }
+    }
+
+    .description {
+      margin: 8px;
+    }
+  }
+}
