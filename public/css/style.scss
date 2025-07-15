@@ -1,0 +1,353 @@
+@font-face {
+  font-family: 'Giants';
+  src: url('/public/font/Giants-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Giants';
+  src: url('/public/font/Giants-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Giants', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-image: url(/public/images/main_bg.jpg);
+  background-size: 100% 100%;
+  background-position: center;
+
+  .yamato-bg-ship {
+    position: fixed;
+    left: 33%;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    background: url('/public/images/ship.webp') no-repeat center center;
+    background-size: contain;
+    z-index: -1; /* 배경 가장 뒤로 */
+    pointer-events: none;
+    opacity: 0.93; /* 너무 튀지 않게 투명도 살짝 */
+    animation: yamatoUpDown 12s ease-in-out infinite alternate;
+    /* 속도 조절은 12s, 20s, 30s 등으로 마음껏 */
+  }
+
+  /* 우주선이 위아래로 천천히 오르락내리락 */
+  @keyframes yamatoUpDown {
+    from {
+      transform: translate(-50%, 0);
+    }
+    to {
+      transform: translate(-50%, -120px);
+    }
+  }
+
+  .tele-link {
+    padding: 16px 0;
+    font-size: 1.4rem;
+
+    .tele-icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 4px;
+    }
+  }
+  .scroll-text {
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .main-section {
+    .left-section {
+      .logo {
+        margin: 0 0 0 16px;
+        img {
+          padding-left: 20px;
+          width: 100%;
+          height: auto;
+          max-width: 250px; /* 로고 크기 제한 */
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .scrolling-list-container {
+        margin-top: 35px;
+        margin-left: 10px;
+        width: 300px;
+
+        .scrolling-list-wrap {
+          width: 284px;
+          height: 290px;
+          overflow: hidden;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+          margin: 0 0 32px 16px;
+          background: rgba(0, 0, 0, 0.5);
+          position: relative;
+        }
+        .scrolling-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scrolling-list li {
+          height: 48px;
+          line-height: 48px;
+          padding: 0 16px;
+          font-size: 0.95rem;
+          color: #ffd600;
+          font-weight: 400;
+          font-family: 'Pretendard-Regular', sans-serif;
+          background: transparent;
+          box-sizing: border-box;
+        }
+        .list-title {
+          font-family: 'Giants', sans-serif;
+          font-weight: 700;
+          font-size: 1.2rem;
+          color: #ffd600;
+          background: black;
+          padding: 8px 16px 6px 16px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          letter-spacing: 1px;
+          margin-left: 16px;
+        }
+        .winning-list-wrap {
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    .right-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .container {
+        margin: 0;
+        padding: 0;
+        max-width: 1570px;
+        border-radius: 10px;
+
+        .jackpot {
+          width: auto;
+          height: 120px;
+          background-image: url(/public/images/jackpot_bg.png);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin: 0 10px 8px;
+          position: relative;
+
+          .jackpot-amount {
+            position: absolute;
+            top: 0;
+            right: 30px;
+
+            font-family: 'Giants', sans-serif;
+            font-size: 3.5rem;
+            color: #ffd600;
+            font-weight: 700;
+            text-align: center;
+            line-height: 120px;
+            letter-spacing: 4px;
+          }
+        }
+
+        .main-banner {
+          margin: 0 10px 8px;
+        }
+
+        .sub-banner {
+          .order-6 {
+            order: 6 !important;
+          }
+          .order-7 {
+            order: 7 !important;
+          }
+
+          .col-12,
+          .col-md-6,
+          .col-4,
+          .col-md-3 {
+            margin-bottom: 8px;
+            // 기존 img 스타일은 제거하고, 아래에서 .banner-link 안에 새로 정의
+
+            .banner-link {
+              display: block;
+              position: relative;
+              border-radius: 10px;
+              overflow: hidden;
+              transition: box-shadow 0.3s;
+
+              img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                display: block;
+              }
+
+              .img-label {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 8px 0 3px;
+                background: rgba(0, 0, 0, 0.7);
+                color: #ffd600;
+                text-align: center;
+                font-family: 'Giants', sans-serif;
+                font-weight: 400;
+                font-size: 1.1rem;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                letter-spacing: 2px;
+                pointer-events: none;
+                z-index: 2;
+              }
+
+              &:hover {
+                box-shadow: 0 0 0 4px #ffd600;
+                img {
+                  transform: scale(1.1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: #151515;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    p {
+      color: #ffd600;
+    }
+  }
+}
+
+// 모바일용
+@media (max-width: 767px) {
+  body {
+    .yamato-bg-ship {
+      left: 50%;
+      top: -20%;
+      width: 150%;
+    }
+
+    @keyframes yamatoUpDown {
+      from {
+        transform: translate(-50%, 0) scaleX(-1);
+      }
+      to {
+        transform: translate(-50%, -80px) scaleX(-1);
+      }
+    }
+    .yamato-bg-ship {
+      transform: translate(-50%, 0) scaleX(-1);
+      animation: yamatoUpDown 12s ease-in-out infinite alternate;
+    }
+
+    .main-section {
+      .right-section {
+        .container {
+          padding-right: 0.5rem;
+          padding-left: 0.5rem;
+
+          .logo {
+            margin-top: 20px !important;
+            img {
+              width: 50%;
+            }
+          }
+
+          .jackpot {
+            margin: 0;
+            background-image: url(/public/images/jackpot_bg_m.png);
+            background-position: center;
+            background-size: contain;
+            height: 56px;
+
+            .jackpot-amount {
+              font-size: 1.5rem;
+              line-height: 56px;
+              right: 20px;
+              letter-spacing: 2px;
+            }
+          }
+
+          .main-banner {
+            margin: 0;
+            width: 100%;
+            height: auto;
+          }
+          .sub-banner {
+            margin-top: 0;
+
+            .col-12,
+            .col-md-6,
+            .col-4,
+            .col-md-3 {
+              .banner-link {
+                display: block;
+                position: relative;
+                border-radius: 10px;
+                overflow: hidden;
+                transition: box-shadow 0.3s;
+
+                .img-label {
+                  padding: 8px 0 3px;
+                  font-size: 0.8rem;
+                }
+
+                &:hover {
+                  box-shadow: 0 0 0 4px #ffd600;
+                  img {
+                    transform: scale(1.1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      background-color: #151515;
+      padding-top: 14px;
+      padding-bottom: 2px;
+      p {
+        color: #ffd600;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
