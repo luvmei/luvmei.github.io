@@ -135,8 +135,9 @@ body .main-section .right-section {
   justify-content: center;
 }
 body .main-section .right-section .container {
+  padding-left: 3rem;
+  padding-right: 3rem;
   margin: 0;
-  padding: 0;
   max-width: 1570px;
   border-radius: 10px;
 }
@@ -147,7 +148,6 @@ body .main-section .right-section .container .jackpot {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 0 10px 8px;
   position: relative;
 }
 body .main-section .right-section .container .jackpot .jackpot-amount {
@@ -163,7 +163,7 @@ body .main-section .right-section .container .jackpot .jackpot-amount {
   letter-spacing: 4px;
 }
 body .main-section .right-section .container .main-banner {
-  margin: 0 10px 8px;
+  margin-bottom: 8px;
 }
 body .main-section .right-section .container .sub-banner .order-6 {
   order: 6 !important;
@@ -205,18 +205,24 @@ body .main-section .right-section .container .sub-banner .col-md-3 .banner-link 
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 8px 0 3px;
+  padding: 12px 0 6px;
   background: rgba(0, 0, 0, 0.7);
   color: #ffd600;
   text-align: center;
   font-family: "Giants", sans-serif;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   letter-spacing: 2px;
   pointer-events: none;
   z-index: 2;
+}
+body .main-section .right-section .container .sub-banner .col-12 .banner-link .img-label.large-label,
+body .main-section .right-section .container .sub-banner .col-md-6 .banner-link .img-label.large-label,
+body .main-section .right-section .container .sub-banner .col-4 .banner-link .img-label.large-label,
+body .main-section .right-section .container .sub-banner .col-md-3 .banner-link .img-label.large-label {
+  font-size: 1.5rem;
 }
 body .main-section .right-section .container .sub-banner .col-12 .banner-link:hover,
 body .main-section .right-section .container .sub-banner .col-md-6 .banner-link:hover,
@@ -303,6 +309,12 @@ body footer p {
   body .main-section .right-section .container .sub-banner .col-4 .banner-link .img-label,
   body .main-section .right-section .container .sub-banner .col-md-3 .banner-link .img-label {
     padding: 8px 0 3px;
+    font-size: 0.8rem;
+  }
+  body .main-section .right-section .container .sub-banner .col-12 .banner-link .img-label.large-label,
+  body .main-section .right-section .container .sub-banner .col-md-6 .banner-link .img-label.large-label,
+  body .main-section .right-section .container .sub-banner .col-4 .banner-link .img-label.large-label,
+  body .main-section .right-section .container .sub-banner .col-md-3 .banner-link .img-label.large-label {
     font-size: 0.8rem;
   }
   body .main-section .right-section .container .sub-banner .col-12 .banner-link:hover,
