@@ -1,0 +1,353 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Giants";
+  src: url("/public/font/Giants-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Giants";
+  src: url("/public/font/Giants-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "Giants", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-image: url(/public/images/main_bg.jpg);
+  background-size: 100% 100%;
+  background-position: center;
+  /* 모바일 대응 (화면이 작아지면 글자 크기, 높이 조정) */
+  /* 우주선이 위아래로 천천히 오르락내리락 */
+}
+body .navbar-marquee {
+  flex: 1 1 auto;
+  overflow: hidden;
+  position: relative;
+  margin-left: 16px;
+  margin-right: 16px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 670px;
+}
+body .scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: "Giants", sans-serif;
+  font-size: 1.2rem;
+  color: #ffd600;
+  /* 마퀴 효과 */
+  animation: marqueeScroll 12s linear infinite;
+}
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media (max-width: 767px) {
+  body .navbar .container {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    align-items: center;
+  }
+  body .navbar-brand {
+    display: none !important;
+  }
+  body .navbar-toggler {
+    order: 1;
+    margin-right: 8px;
+  }
+  body .navbar-marquee {
+    width: 60%;
+    height: 28px;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  body .scroll-text {
+    font-size: 0.9rem;
+  }
+}
+body .livechat-icon {
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  background: transparent;
+  padding: 8px;
+}
+body .livechat-icon img {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+body .yamato-bg-ship {
+  position: fixed;
+  left: 33%;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  background: url("/public/images/ship.webp") no-repeat center center;
+  background-size: contain;
+  z-index: -1; /* 배경 가장 뒤로 */
+  pointer-events: none;
+  opacity: 0.93; /* 너무 튀지 않게 투명도 살짝 */
+  animation: yamatoUpDown 12s ease-in-out infinite alternate;
+  /* 속도 조절은 12s, 20s, 30s 등으로 마음껏 */
+}
+body .navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: "Giants", sans-serif;
+  color: #ffd600;
+  font-size: 1.4rem;
+  padding: 10px 20px;
+}
+body .navbar .navbar-brand img {
+  width: 100px;
+  height: auto;
+}
+body .navbar .navbar-toggler {
+  border-color: #ffd600;
+}
+body .navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,214,0,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+body .navbar a {
+  color: #ffd600;
+  text-decoration: none;
+  margin-right: 20px;
+}
+body .navbar a:hover {
+  text-decoration: underline;
+}
+@keyframes yamatoUpDown {
+  from {
+    transform: translate(-50%, 0);
+  }
+  to {
+    transform: translate(-50%, -120px);
+  }
+}
+body .container {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin: 0;
+  max-width: 1200px;
+  border-radius: 10px;
+}
+body .container .jackpot {
+  width: auto;
+  height: 120px;
+  background-image: url(/public/images/jackpot_bg.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+body .container .jackpot .jackpot-amount {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  font-family: "Giants", sans-serif;
+  font-size: 3.5rem;
+  color: #ffd600;
+  font-weight: 700;
+  text-align: center;
+  line-height: 120px;
+  letter-spacing: 4px;
+}
+body .container .main-banner {
+  margin-bottom: 8px;
+}
+body .container .sub-banner .order-6 {
+  order: 6 !important;
+}
+body .container .sub-banner .order-7 {
+  order: 7 !important;
+}
+body .container .sub-banner .col-12,
+body .container .sub-banner .col-md-6,
+body .container .sub-banner .col-4,
+body .container .sub-banner .col-md-3 {
+  margin-bottom: 8px;
+}
+body .container .sub-banner .col-12 .banner-link,
+body .container .sub-banner .col-md-6 .banner-link,
+body .container .sub-banner .col-4 .banner-link,
+body .container .sub-banner .col-md-3 .banner-link {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+body .container .sub-banner .col-12 .banner-link img,
+body .container .sub-banner .col-md-6 .banner-link img,
+body .container .sub-banner .col-4 .banner-link img,
+body .container .sub-banner .col-md-3 .banner-link img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  display: block;
+}
+body .container .sub-banner .col-12 .banner-link .img-label,
+body .container .sub-banner .col-md-6 .banner-link .img-label,
+body .container .sub-banner .col-4 .banner-link .img-label,
+body .container .sub-banner .col-md-3 .banner-link .img-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 0 6px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffd600;
+  text-align: center;
+  font-family: "Giants", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  letter-spacing: 2px;
+  pointer-events: none;
+  z-index: 2;
+}
+body .container .sub-banner .col-12 .banner-link .img-label.large-label,
+body .container .sub-banner .col-md-6 .banner-link .img-label.large-label,
+body .container .sub-banner .col-4 .banner-link .img-label.large-label,
+body .container .sub-banner .col-md-3 .banner-link .img-label.large-label {
+  font-size: 1.5rem;
+}
+body .container .sub-banner .col-12 .banner-link:hover,
+body .container .sub-banner .col-md-6 .banner-link:hover,
+body .container .sub-banner .col-4 .banner-link:hover,
+body .container .sub-banner .col-md-3 .banner-link:hover {
+  box-shadow: 0 0 0 4px #ffd600;
+}
+body .container .sub-banner .col-12 .banner-link:hover img,
+body .container .sub-banner .col-md-6 .banner-link:hover img,
+body .container .sub-banner .col-4 .banner-link:hover img,
+body .container .sub-banner .col-md-3 .banner-link:hover img {
+  transform: scale(1.1);
+}
+body footer {
+  background-color: #151515;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+body footer p {
+  color: #ffd600;
+}
+
+@media (max-width: 767px) {
+  body .navbar {
+    margin-bottom: 0;
+  }
+  body .navbar .navbar-brand {
+    display: none;
+  }
+  body .yamato-bg-ship {
+    left: 50%;
+    top: -20%;
+    width: 150%;
+  }
+  @keyframes yamatoUpDown {
+    from {
+      transform: translate(-50%, 0) scaleX(-1);
+    }
+    to {
+      transform: translate(-50%, -100px) scaleX(-1);
+    }
+  }
+  body .yamato-bg-ship {
+    transform: translate(-50%, 0) scaleX(-1);
+    animation: yamatoUpDown 12s ease-in-out infinite alternate;
+  }
+  body .container {
+    width: 90%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  body .container .jackpot {
+    margin: 0;
+    background-image: url(/public/images/jackpot_bg_m.png);
+    background-position: center;
+    background-size: contain;
+    height: 56px;
+  }
+  body .container .jackpot .jackpot-amount {
+    font-size: 1.5rem;
+    line-height: 56px;
+    right: 20px;
+    letter-spacing: 2px;
+  }
+  body .container .main-banner {
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+  body .container .sub-banner {
+    margin-top: 0;
+  }
+  body .container .sub-banner .col-12 .banner-link,
+  body .container .sub-banner .col-md-6 .banner-link,
+  body .container .sub-banner .col-4 .banner-link,
+  body .container .sub-banner .col-md-3 .banner-link {
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  body .container .sub-banner .col-12 .banner-link .img-label,
+  body .container .sub-banner .col-md-6 .banner-link .img-label,
+  body .container .sub-banner .col-4 .banner-link .img-label,
+  body .container .sub-banner .col-md-3 .banner-link .img-label {
+    padding: 8px 0 3px;
+    font-size: 0.8rem;
+  }
+  body .container .sub-banner .col-12 .banner-link .img-label.large-label,
+  body .container .sub-banner .col-md-6 .banner-link .img-label.large-label,
+  body .container .sub-banner .col-4 .banner-link .img-label.large-label,
+  body .container .sub-banner .col-md-3 .banner-link .img-label.large-label {
+    font-size: 0.8rem;
+  }
+  body .container .sub-banner .col-12 .banner-link:hover,
+  body .container .sub-banner .col-md-6 .banner-link:hover,
+  body .container .sub-banner .col-4 .banner-link:hover,
+  body .container .sub-banner .col-md-3 .banner-link:hover {
+    box-shadow: 0 0 0 4px #ffd600;
+  }
+  body .container .sub-banner .col-12 .banner-link:hover img,
+  body .container .sub-banner .col-md-6 .banner-link:hover img,
+  body .container .sub-banner .col-4 .banner-link:hover img,
+  body .container .sub-banner .col-md-3 .banner-link:hover img {
+    transform: scale(1.1);
+  }
+  body footer {
+    background-color: #151515;
+    padding-top: 14px;
+    padding-bottom: 2px;
+  }
+  body footer p {
+    color: #ffd600;
+    font-size: 0.7rem;
+  }
+  body .livechat-icon {
+    bottom: 16px;
+    right: 16px;
+  }
+}/*# sourceMappingURL=style.css.map */
