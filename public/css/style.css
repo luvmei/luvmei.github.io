@@ -60,7 +60,7 @@ body {
   /* 컨테이너 및 박스 */
 }
 body .navbar .nav-link {
-  color: #4a4a4a;
+  color: #969696;
 }
 body .navbar .nav-link:hover {
   color: #eb6100 !important;
@@ -100,8 +100,8 @@ body .scroll-text {
 }
 body .livechat-icon {
   position: fixed;
-  bottom: 64px;
-  right: 64px;
+  bottom: 88px;
+  right: 44px;
   z-index: 9999;
   cursor: pointer;
   border-radius: 50%;
@@ -115,12 +115,18 @@ body .livechat-icon {
   }
 }
 body .livechat-icon img {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   display: block;
   border-radius: 15px;
   border: 3px solid #000;
   box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+@media screen and (max-width: 576px) {
+  body .livechat-icon img {
+    width: 64px;
+    height: 64px;
+  }
 }
 body .navbar {
   background-color: rgba(0, 0, 0, 0.8);
@@ -136,7 +142,7 @@ body .navbar .navbar-toggler {
   border-color: #eb6100;
 }
 body .navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,214,0,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(220,90,20,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 body .navbar a {
   color: #eb6100;
@@ -204,11 +210,11 @@ body .notice-list-box .notice-list-contents li .notice-tag.event {
   color: #eb6100;
 }
 body .notice-list-box .notice-list-contents li .notice-tag.notice {
-  color: #ff5858;
+  color: #eb6100;
 }
 body .notice-list-box .notice-list-contents li .notice-content {
   flex: 1 1 auto;
-  color: #fffad3;
+  color: #eb6100;
   font-weight: 500;
   letter-spacing: -0.5px;
   padding-right: 12px;
@@ -266,13 +272,14 @@ body .withdraw-list-box .withdraw-list-outer li {
   border-bottom: 1px solid rgba(235, 97, 0, 0.13);
   min-height: 32px;
   font-family: "Pretendard-Regular", sans-serif;
+  padding: 0 8px;
 }
 body .withdraw-list-box .withdraw-list-outer li:last-child {
   border-bottom: none;
 }
 body .withdraw-list-box .withdraw-list-outer li .id {
   width: 100px;
-  color: #fff;
+  color: #eb6100;
   font-weight: 400;
   font-size: 1.08rem;
   margin-right: 8px;
@@ -415,6 +422,11 @@ footer p {
 
 /* ----------------- 서유기 테마: charms 전체 화면 확장 ----------------- */
 /* 콘텐츠가 항상 charms 위 레이어로 보이도록 */
+body > *:not(.sxg-charms, .livechat-icon) {
+  position: relative;
+  z-index: 1;
+}
+
 /* charms 레이어: 화면 전체 덮기 (네비 포함) */
 .sxg-charms {
   position: fixed;
@@ -433,7 +445,7 @@ footer p {
   bottom: -14vh; /* 시작 오프스크린 */
   left: var(--x);
   color: rgba(255, 224, 178, 0.26);
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 3px rgba(210, 140, 30, 0.9), 0 0 6px rgba(188, 120, 20, 0.6), 0 0 10px rgba(225, 110, 35, 0.3);
   font-size: clamp(22px, 4.2vmin, 40px); /* 글자 더 크게 */
   letter-spacing: 0.05em;
   opacity: 0.98;
