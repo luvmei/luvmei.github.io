@@ -343,7 +343,7 @@ body .game-banner .banner-item .banner-link:hover img {
   transform: scale(1.03);
 }
 body .sub-banner {
-  width: 90%;
+  width: 100%;
   margin: 16px auto 0;
   border-radius: 10px;
   overflow: hidden;
@@ -354,7 +354,7 @@ body .sub-banner img {
   display: block;
 }
 body #infoBannerCarousel {
-  width: 90%;
+  width: 100%;
 }
 
 /* 푸터 스티키 */
