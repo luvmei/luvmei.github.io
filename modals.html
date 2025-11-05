@@ -1,0 +1,180 @@
+<!-- 입금 모달 -->
+<div
+  class="modal fade sxg-modal"
+  id="depositModal"
+  tabindex="-1"
+  aria-labelledby="depositModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content needs-validation" id="depositForm" novalidate>
+      <div class="modal-header sxg-head">
+        <h5 class="modal-title" id="depositModalLabel">입금 요청</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+      </div>
+
+      <div class="modal-body">
+        <label class="form-label">입금 신청 금액</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control amount-input"
+            id="depositAmount"
+            placeholder="예: 50,000"
+            inputmode="numeric"
+            required />
+          <span class="input-group-text">원</span>
+          <button class="btn btn-outline-secondary" type="button" id="depositClear">정정</button>
+        </div>
+        <div class="quick-amounts mt-2 d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-chip" data-amt="10000">+1만</button>
+          <button type="button" class="btn btn-chip" data-amt="50000">+5만</button>
+          <button type="button" class="btn btn-chip" data-amt="100000">+10만</button>
+          <button type="button" class="btn btn-chip" data-amt="500000">+50만</button>
+          <button type="button" class="btn btn-chip" data-amt="1000000">+100만</button>
+        </div>
+        <div class="invalid-feedback">입금 금액을 입력해 주세요.</div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary w-100">입금 요청하기</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 출금 모달 -->
+<div
+  class="modal fade sxg-modal"
+  id="withdrawModal"
+  tabindex="-1"
+  aria-labelledby="withdrawModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content needs-validation" id="withdrawForm" novalidate>
+      <div class="modal-header sxg-head">
+        <h5 class="modal-title" id="withdrawModalLabel">출금 요청</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-6">
+            <label class="form-label">은행</label>
+            <select id="withdrawBank" class="form-select" required>
+              <option value="">은행 선택</option>
+              <option>국민은행</option>
+              <option>신한은행</option>
+              <option>우리은행</option>
+              <option>카카오뱅크</option>
+              <option>농협</option>
+              <option>하나은행</option>
+            </select>
+            <div class="invalid-feedback">은행을 선택해 주세요.</div>
+          </div>
+          <div class="col-6">
+            <label class="form-label">예금주</label>
+            <input type="text" class="form-control" id="withdrawOwner" placeholder="예: 홍길동" required />
+            <div class="invalid-feedback">예금주를 입력해 주세요.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">계좌번호</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="withdrawAccount"
+                inputmode="numeric"
+                placeholder="하이픈 없이 숫자만"
+                required />
+            </div>
+            <div class="invalid-feedback">계좌번호를 확인해 주세요.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">출금 신청 금액</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control amount-input"
+                id="withdrawAmount"
+                placeholder="예: 100,000"
+                inputmode="numeric"
+                required />
+              <span class="input-group-text">원</span>
+              <button class="btn btn-outline-secondary" type="button" id="withdrawClear">정정</button>
+            </div>
+            <div class="quick-amounts mt-2 d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-chip" data-amt="10000">+1만</button>
+              <button type="button" class="btn btn-chip" data-amt="50000">+5만</button>
+              <button type="button" class="btn btn-chip" data-amt="100000">+10만</button>
+              <button type="button" class="btn btn-chip" data-amt="500000">+50만</button>
+              <button type="button" class="btn btn-chip" data-amt="1000000">+100만</button>
+            </div>
+            <div class="invalid-feedback">출금 금액을 입력해 주세요.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">출금 비밀번호</label>
+            <input type="password" class="form-control" id="withdrawPw" placeholder="숫자 4~6자리 권장" required />
+            <div class="invalid-feedback">출금 비밀번호를 입력해 주세요.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary w-100">출금 요청하기</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 로그인 모달 -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">로그인</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control my-3" placeholder="아이디" id="loginId" />
+        <input type="password" class="form-control mb-2" placeholder="비밀번호" id="loginPw" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary w-100">로그인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 회원가입 모달 -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">회원가입</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-2">
+          <input type="text" class="form-control" placeholder="아이디" id="signupId" />
+          <button class="btn btn-secondary" type="button" id="checkIdBtn">중복확인</button>
+        </div>
+        <input type="password" class="form-control mb-2" placeholder="비밀번호" id="signupPw" />
+        <input type="password" class="form-control mb-2" placeholder="비밀번호 확인" id="signupPw2" />
+        <select id="bankSelect" class="form-select mb-2">
+          <option value="">은행 선택</option>
+          <option>국민은행</option>
+          <option>신한은행</option>
+          <option>우리은행</option>
+          <option>카카오뱅크</option>
+          <option>농협</option>
+          <option>하나은행</option>
+        </select>
+        <input type="text" class="form-control mb-2" placeholder="예금주" id="owner" />
+        <input type="text" class="form-control mb-2" placeholder="추천코드" id="referral" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary w-100">회원가입</button>
+      </div>
+    </div>
+  </div>
+</div>

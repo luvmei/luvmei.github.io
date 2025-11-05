@@ -1,5 +1,30 @@
 // 출금 리스트 박스
 document.addEventListener('DOMContentLoaded', function () {
+  let modalsReady = false;
+
+  document.addEventListener(
+    'click',
+    function (e) {
+      if (!modalsReady && e.target.closest('[data-bs-toggle="modal"]')) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    },
+    true
+  );
+
+  fetch('modals.html?v=' + Date.now())
+    .then(r => {
+      if (!r.ok) throw new Error('modals fetch ' + r.status);
+      return r.text();
+    })
+    .then(html => {
+      document.getElementById('global-modals').innerHTML = html;
+      modalsReady = true;
+    })
+    .catch(err => console.error(err));
+
   const withdrawList = document.querySelector('.withdraw-list');
   const itemHeight = 32; // li 한 줄 높이(px)
   const boxHeight = 170; // 보여줄 영역 높이(px)
@@ -85,13 +110,75 @@ document.addEventListener('DOMContentLoaded', function () {
 
 (function () {
   const pool = [
-    '龍','虎','鳳','龜','麒','麟','玄','靈','神','仙','瑞','祥','福','禄','壽','財','富',
-    '光','幻','紫','夢','星','月','雲','霞','雨','雷','虹','風','火','炎','霊',
-    '蓮','華','禧','吉','慶','喜','慈','善','靜','影','鏡','琉','璃','玉','珠','金',
-    '梵','禪','寶','般','若','摩','訶','薩','菩','提',
-    '符','祈','魂','幽','術','道','命','氣','祭','印'
+    '龍',
+    '虎',
+    '鳳',
+    '龜',
+    '麒',
+    '麟',
+    '玄',
+    '靈',
+    '神',
+    '仙',
+    '瑞',
+    '祥',
+    '福',
+    '禄',
+    '壽',
+    '財',
+    '富',
+    '光',
+    '幻',
+    '紫',
+    '夢',
+    '星',
+    '月',
+    '雲',
+    '霞',
+    '雨',
+    '雷',
+    '虹',
+    '風',
+    '火',
+    '炎',
+    '霊',
+    '蓮',
+    '華',
+    '禧',
+    '吉',
+    '慶',
+    '喜',
+    '慈',
+    '善',
+    '靜',
+    '影',
+    '鏡',
+    '琉',
+    '璃',
+    '玉',
+    '珠',
+    '金',
+    '梵',
+    '禪',
+    '寶',
+    '般',
+    '若',
+    '摩',
+    '訶',
+    '薩',
+    '菩',
+    '提',
+    '符',
+    '祈',
+    '魂',
+    '幽',
+    '術',
+    '道',
+    '命',
+    '氣',
+    '祭',
+    '印',
   ];
-  
 
   const container = document.getElementById('sxgCharms');
   const count = 48;
@@ -107,7 +194,8 @@ document.addEventListener('DOMContentLoaded', function () {
     s.style.setProperty('--x', Math.floor(Math.random() * 100) + '%');
 
     // 속도: 제각각 (느리게~빠르게)
-    const minDur = 12, maxDur = 50;
+    const minDur = 12,
+      maxDur = 50;
     const durNum = minDur + Math.random() * (maxDur - minDur);
     const dur = durNum.toFixed(2) + 's';
     s.style.setProperty('--dur', dur);
@@ -117,66 +205,19 @@ document.addEventListener('DOMContentLoaded', function () {
     s.style.setProperty('--delay', delay);
 
     // 미세 회전
-    const minRot = -6, maxRot = 6;
+    const minRot = -6,
+      maxRot = 6;
     s.style.setProperty('--rotStart', (Math.random() * (maxRot - minRot) + minRot).toFixed(2) + 'deg');
-    s.style.setProperty('--rotEnd',   (Math.random() * (maxRot - minRot) + minRot).toFixed(2) + 'deg');
+    s.style.setProperty('--rotEnd', (Math.random() * (maxRot - minRot) + minRot).toFixed(2) + 'deg');
 
     // 크기 랜덤
     const isMobile = window.innerWidth <= 767;
     const minSize = isMobile ? 8 : 16;
     const maxSize = isMobile ? 25 : 40;
-    s.style.fontSize = (Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize) + 'px';
+    s.style.fontSize = Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize + 'px';
 
     frag.appendChild(s);
   }
 
   container.appendChild(frag);
 })();
-
-
-// 잭팟팟 관련
-const CountUp = window.countUp.CountUp;
-const STORAGE_KEY = 'jackpotValue';
-const jackpotAmount = document.querySelector('.jackpot-amount');
-
-// 시작 값 설정(1400만원~1450만원)
-let lastValue = parseInt(localStorage.getItem(STORAGE_KEY), 10);
-if (isNaN(lastValue)) {
-  lastValue = 14000000 + Math.floor(Math.random() * 500000); // 1400만원~1450만원
-  localStorage.setItem(STORAGE_KEY, lastValue);
-}
-
-function animateJackpot(newValue) {
-  const duration = 1.2 + Math.random() * 0.6;
-  const countUp = new CountUp(jackpotAmount, newValue, {
-    startVal: lastValue,
-    duration: duration,
-    separator: ',',
-    suffix: ' 원',
-  });
-  if (!countUp.error) {
-    countUp.start();
-  } else {
-    // jackpotAmount.textContent = `${newValue.toLocaleString()} 원`;
-    jackpotAmount.textContent = newValue.toLocaleString();
-  }
-  lastValue = newValue;
-  localStorage.setItem(STORAGE_KEY, newValue);
-}
-
-function increaseJackpot() {
-  const min = 300,
-    max = 2000,
-    step = 1;
-  const steps = Math.floor((max - min) / step) + 1;
-  const inc = min + Math.floor(Math.random() * steps) * step;
-  const next = lastValue + inc;
-  animateJackpot(next);
-
-  const nextDelay = 2000 + Math.random() * 3000; // 2000~5000ms
-  setTimeout(increaseJackpot, nextDelay);
-}
-
-// 최초 표시
-animateJackpot(lastValue);
-setTimeout(increaseJackpot, 2000 + Math.random() * 3000);

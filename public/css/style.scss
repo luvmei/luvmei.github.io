@@ -77,14 +77,10 @@ body {
     flex: 1 1 auto;
     overflow: hidden;
     position: relative;
-    margin: 0 16px;
     height: 40px;
     display: flex;
     align-items: center;
-    width: 60%;
-    &.main {
-      width: 100%;
-    }
+    width: 100%;    
   }
   .scroll-text {
     display: inline-block;
@@ -356,7 +352,7 @@ body {
   }
 
   .sub-banner {
-    width: 90%;
+    width: 100%;
     margin: 16px auto 0;
     border-radius: 10px;
     overflow: hidden;
@@ -368,7 +364,7 @@ body {
   }
 
   #infoBannerCarousel{
-    width: 90%;    
+    width: 100%;    
   }
 }
 
@@ -391,13 +387,14 @@ footer p {
     overflow: hidden;
     border: 3px solid #eb6100;
     border-radius: 10px;
+    color: #ffcc80;
 
     // 🔹 어두운 오버레이
     &::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0);
+      background: rgba(0, 0, 0, 0.3);
       z-index: 0;
     }
 
@@ -459,11 +456,12 @@ footer p {
 
 /* ----------------- 서유기 테마: charms 전체 화면 확장 ----------------- */
 
-/* 콘텐츠가 항상 charms 위 레이어로 보이도록 */
-body > *:not(.sxg-charms, .livechat-icon) {
+/* 콘텐츠가 항상 charms 위 레이어로 보이도록 (모달/백드롭 제외) */
+body > *:not(.sxg-charms, .livechat-icon, .modal, .modal-backdrop, #global-modals) {
   position: relative;
   z-index: 1;
 }
+
 
 /* charms 레이어: 화면 전체 덮기 (네비 포함) */
 .sxg-charms {
@@ -718,4 +716,86 @@ body > *:not(.sxg-charms, .livechat-icon) {
   .sxg-charms span {
     font-size: clamp(18px, 5vmin, 32px);
   }
+}
+
+/* ===== SXG 모달 데코 ===== */
+.sxg-modal {
+  .sxg-head {
+    position: relative;
+    background: linear-gradient(135deg, rgba(235,97,0,0.35), rgba(235,97,0,0.08));
+    border-bottom: 1px solid rgba(235,97,0,0.25);
+    .modal-title {
+      color: #ffce9a;
+      letter-spacing: .3px;
+      font-weight: 700;
+      padding-left: 4px;
+    }
+  }
+  .sxg-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(235,97,0,0.12);
+    color: #eb6100;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-right: 8px;
+    border: 1px solid rgba(235,97,0,0.35);
+    box-shadow: 0 0 12px rgba(235,97,0,0.15) inset;
+  }
+
+  .glass {
+    background: rgba(0,0,0,.35);
+    border: 1px solid rgba(235,97,0,.25);
+    border-radius: 12px;
+    padding: 12px 14px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,.35);
+  }
+
+  .bank-card {
+    .bank-meta {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+      .bank-chip {
+        display: inline-block;
+        padding: 4px 10px; border-radius: 999px;
+        font-weight: 700; font-size: .92rem; letter-spacing: .2px;
+        background: rgba(235,97,0,.2);
+        color: #ffb777; border: 1px solid rgba(235,97,0,.35);
+        &.alt { background: rgba(235,97,0,.1); color: #ffd9b6; }
+      }
+      .bank-hint { color: #ffcc80; font-size: .92rem; opacity: .85; }
+    }
+    .bank-balance {
+      display: flex; align-items: baseline; justify-content: space-between;
+      .label { color: #ffcc80; font-size: .95rem; opacity: .85; }
+      .value { color: #ffdfbf; font-size: 1.35rem; font-weight: 800; letter-spacing: .2px; }
+    }
+  }
+
+  .btn-chip {
+    border: 1px solid rgba(235,97,0,.45);
+    background: rgba(235,97,0,.12);
+    color: #ffcf9d;
+    padding: .28rem .65rem; border-radius: 999px; font-weight: 700;
+    transition: transform .06s ease;
+    &:hover { background: rgba(235,97,0,.2); }
+    &:active { transform: translateY(1px); }
+  }
+
+  .input-group-text { background: rgba(235,97,0,.12); color: #ffcf9d; border-color: rgba(235,97,0,.35); }
+  .form-control, .form-select {
+    background: rgba(0,0,0,.35);
+    color: #ffdcb5; border: 1px solid rgba(235,97,0,.28);
+  }
+  .form-control:focus, .form-select:focus {
+    border-color: #ff7a1a; box-shadow: 0 0 0 .2rem rgba(255,122,26,.25);
+  }
+  .invalid-feedback { color: #ffb199; }
+}
+
+/* 테마 버튼(이미 있다면 생략 가능) */
+.btn-primary {
+  background-color: #eb6100 !important;
+  border-color: #eb6100 !important;
+  font-weight: 700;
+  &:hover { background-color: #ff7a1a !important; border-color: #ff7a1a !important; }
 }
