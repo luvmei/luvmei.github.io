@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"detail-shell","children":["$","article",null,{"className":"detail-article","children":[["$","div",null,{"className":"detail-head","children":[["$","p",null,{"className":"eyebrow","children":"Admin Notice"}],["$","h1",null,{"children":"정적 배포에서는 관리자 저장 기능을 사용할 수 없습니다"}]]}],["$","div",null,{"className":"detail-body","children":[["$","p",null,{"children":"릴허브 관리자 모드는 로컬 개발 서버에서 `npm run dev`로 실행할 때만 글과 배너 설정을 저장할 수 있습니다."}],["$","p",null,{"children":"GitHub Pages 반영이 필요하면 로컬에서 수정 후 `npm run build`를 다시 실행하고 `out` 폴더 내용을 배포 저장소에 복사해야 합니다."}]]}]]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/15tqkgc1o.vsm.js","async":true}]],["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"xvZr39Z5kvHiTRcP8U6pT"}
+4:null

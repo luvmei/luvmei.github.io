@@ -1,0 +1,28 @@
+<svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#4B4138" stroke-width="3.2" stroke-linecap="round">
+    <path d="M48 48L24 23"/>
+    <path d="M48 48L59 17"/>
+    <path d="M48 48L82 31"/>
+    <path d="M48 48L76 71"/>
+    <path d="M48 48L26 74"/>
+  </g>
+
+  <circle cx="48" cy="48" r="13" fill="#111111"/>
+  <circle cx="24" cy="23" r="8" fill="#5EC7C5"/>
+  <circle cx="59" cy="17" r="7" fill="#7BC96F"/>
+  <circle cx="82" cy="31" r="8.5" fill="#7A8CFF"/>
+  <circle cx="76" cy="71" r="7.5" fill="#F4B942"/>
+  <circle cx="26" cy="74" r="8" fill="#F07AA8"/>
+
+  <text
+    x="104"
+    y="64"
+    fill="#2E241B"
+    font-family="Pretendard, 'Noto Sans KR', sans-serif"
+    font-size="46"
+    font-weight="800"
+    letter-spacing="-1.4"
+  >
+    릴허브
+  </text>
+</svg>
